@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music – Timothé Montoya</title>
+  <title>TIPE – Timothé Montoya</title>
   <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    #content .card {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    #content .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(70%);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    #content .card:hover img {
+    transform: scale(1.02);    
+    filter: brightness(85%);  
+    }
+  </style>
+
 </head>
 <body>
   <header>
@@ -16,16 +39,18 @@
     </nav>
   </header>
 
-  <section id="hero" style="background:url('../images/musique1.jpg') center/cover;">
+  <section id="hero" style="background:linear-gradient(135deg, rgba(118,29,191,0.5), rgba(0,0,0,0.4)), url('../images/futurprojects.jpg') center/cover;">
     <div class="hero-content">
-      <h1>Anomaly detection</h1>
-      <p></p>
+      <h1>Anomaly Detection</h1>
+      <p>This project taught me how to preprocess data and 
+         structure a model efficiently.</p>
     </div>
   </section>
 
   <section id="content">
-    <h2>My first real project.</h2>
-    <a href="TIPE_diapo.pdf" class="card">
+    <h2>My First Real Project.</h2>
+    <h3>Click to open the PDF :</h3>
+    <a href="TIPE_diapo.pdf" class="card tipe-card">
       <img src="../images/TIPE.png" alt="TIPE">
     </a>
   </section>
