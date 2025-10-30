@@ -1,0 +1,28 @@
+name: Update Last Updated Date
+
+on:
+  push:
+    branches:
+      - master  # ou 'main' si ta branche principale s'appelle ainsi
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate last-updated.js
+        run: |
+          DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "const LAST_UPDATED = \"$DATE\";" > last-updated.js
+          echo "✅ last-updated.js generated with date $DATE"
+
+      - name: Commit and push updated file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add last-updated.js
+          git commit -m "Update last-updated.js [skip ci]" || echo "No changes to commit"
+          git push
