@@ -47,6 +47,6 @@ navLinks.querySelectorAll("a").forEach(link =>
   })
 );
 
-const d = new Date(LAST_UPDATED);
+const d = new Date(document.lastModified);
 const f = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'});
 document.getElementById('last-updated').textContent = `Last updated • ${f}`;
